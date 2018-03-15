@@ -108,13 +108,32 @@ $data = mysqli_query($dbc, $query);
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Register</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+
+
+        <!--FORM START-->
+        <form class="form-signin" action="#" method="post">
+
+        <div>
+          <label for="fname" class="sr-only">Username</label>
+
+          <input type="text" name="fname" id="fname" class="form-control" placeholder="First Name" required="" autofocus="" autocomplete="off">
+        </div>
+
+
+        <div>
+          <label for="lname" class="sr-only">Password</label>
+
+          <input type="text" name="lname" id="lname" class="form-control" placeholder="Last Name" required="" autocomplete="off" >
+        </div>
+
+      </form>
+      <!--  //////END CONTENT//////-->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
