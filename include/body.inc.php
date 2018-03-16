@@ -61,7 +61,7 @@ echo '<p class="error">' . $error_msg . '</p>';
 ?> 
 
     <!-- Form start -->
-    <form class="form-signin">
+    <form class="form-signin" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 
       <h1 class="h3 mb-3 font-weight-normal">Login</h1>
 
