@@ -1,4 +1,3 @@
-
 <?php
   //require_once("include/startSession.php");
   include 'include/header.inc.php';
@@ -6,7 +5,7 @@
 
 ?>
 
-<?php
+  <?php
 
   include 'include/body.inc.php';
 
@@ -18,7 +17,7 @@
 
 ?>
 
-<?php
+    <?php
   include 'include/footer.inc.php';
 
 ?>

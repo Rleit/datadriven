@@ -1,61 +1,69 @@
-
-
 <div class="container">
-
+  <!-- Column for the login form -->
   <div class="col-sm">
-      <form class="form-signin" action="#" method="post">
+    <!-- Form start -->
+    <form class="form-signin" action="#" method="post">
 
-        <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+      <h1 class="h3 mb-3 font-weight-normal">Login</h1>
 
+      <!-- Username field -->
       <div>
         <label for="fname" class="sr-only">Username</label>
 
         <input type="text" name="fname" id="fname" class="form-control" placeholder="First Name" required="" autofocus="" autocomplete="off">
       </div>
 
-
+      <!-- Password Field  -->
       <div>
         <label for="lname" class="sr-only">Password</label>
 
-        <input type="text" name="lname" id="lname" class="form-control" placeholder="Last Name" required="" autocomplete="off" >
+        <input type="text" name="lname" id="lname" class="form-control" placeholder="Last Name" required="" autocomplete="off">
       </div>
 
+      <!-- Remember me check box -->
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
 
-        <div class="checkbox mb-3">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
+      </div>
 
-        </div>
+      <!-- Login button  -->
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
       </br>
-        <button type="button" class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">
-  Register
-</button>
+
+      <!-- MODAL For registry form -->
+      <button type="button" class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">
+        Register
+      </button>
 
 
-      </form>
+    </form>
 
   </div>
 
-<div class="col-sm">
+  <!-- Colum for things below login/registry -->
+  <div class="col-sm">
     <p>Welcome to our website</p>
 
-<!--    <p><h2><?php echo trim($_POST["fname"]);?></h2>	&nbsp; <h2> <?php echo trim($_POST["lname"]);?></h2> </p>-->
+    <!--    <p><h2><?php echo trim($_POST["fname"]);?></h2>	&nbsp; <h2> <?php echo trim($_POST["lname"]);?></h2> </p> -->
 
+    <!-- Top part of the table that shows information from the database -->
     <table class="table table-striped table-dark">
-     <thead> <tr>
-      <th scope="col">#</th>
-      <th scope="col">Username</th>
-      <th scope="col">Registry Date</th>
-      <th scope="col">First Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Password</th>
-    </tr></thead>
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Username</th>
+          <th scope="col">Registry Date</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Password</th>
+        </tr>
+      </thead>
 
-    <tbody>
-<?php
+      <tbody>
+        <?php
 // Connect to the database
 
 $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
@@ -76,6 +84,7 @@ $data = mysqli_query($dbc, $query);
 
 // if (mysqli_num_rows($data) == 2) {
     // The user row was found so display the user data
+    /* While > mysqli num rows */
     while ($row = mysqli_fetch_array($data)) {
         if (!empty($row['id'])) {
             echo '<tr><th scope="row">'. $row['id'] .'</th>';
@@ -103,46 +112,47 @@ $data = mysqli_query($dbc, $query);
 
 ?>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" >
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Register</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
+          <!-- Modal for the registry form -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
 
 
-        <!--FORM START-->
-        <form class="form-signin" action="#" method="post">
+                  <!--FORM START-->
+                  <form class="form-signin" action="#" method="post">
 
-        <div>
-          <label for="fname" class="sr-only">Username</label>
+                    <div>
+                      <label for="fname" class="sr-only">Username</label>
 
-          <input type="text" name="fname" id="fname" class="form-control" placeholder="First Name" required="" autofocus="" autocomplete="off">
-        </div>
+                      <input type="text" name="fname" id="fname" class="form-control" placeholder="First Name" required="" autofocus="" autocomplete="off">
+                    </div>
 
 
-        <div>
-          <label for="lname" class="sr-only">Password</label>
+                    <div>
+                      <label for="lname" class="sr-only">Password</label>
 
-          <input type="text" name="lname" id="lname" class="form-control" placeholder="Last Name" required="" autocomplete="off" >
-        </div>
+                      <input type="text" name="lname" id="lname" class="form-control" placeholder="Last Name" required="" autocomplete="off">
+                    </div>
 
-      </form>
-      <!--  //////END CONTENT//////-->
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
+                  </form>
+                  <!--  //////END CONTENT//////-->
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
   </div>
+
 </div>
-
-  </div>
-
-  </div>
