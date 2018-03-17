@@ -29,7 +29,7 @@
 
   <script>
     function goBack() {
-      window.history.back()
+      window.location = "http://media.uclan.ac.uk/~rleit/T1/";
     }
   </script>
 
