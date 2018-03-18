@@ -86,7 +86,7 @@ mysqli_close($dbc);
     </div>
     <!-- EMAIL -->
     <div>
-      <label for="lname" class="sr-only">Email</label>
+      <label for="email" class="sr-only">Email</label>
 
       <input type="email" name="email" id="email" class="form-control" placeholder="Email" required="" autocomplete="off" value="<?php if (!empty($email)) echo $email; ?>">
     </div>
