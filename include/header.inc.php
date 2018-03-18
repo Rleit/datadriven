@@ -27,6 +27,7 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
 
+  <!-- Function to back to the front page, index.php did not work for fuck knows why.-->
   <script>
     function goBack() {
       window.location = "http://media.uclan.ac.uk/~rleit/T1/";

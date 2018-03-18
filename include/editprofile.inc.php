@@ -33,6 +33,7 @@ echo '<p class="error" >There was a problem accessing your profile ' . $_SESSION
         if (!empty($registry_date)) { 
         $query = "UPDATE phptest SET username = '$username', fname = '$fname', email = '$email',  registry_date = '$registry_date'   WHERE id = '" . $_SESSION['id'] . "'";
     }
+    
     else {
         $query = "UPDATE phptest SET username = '$username', fname = '$fname', email = '$email'   WHERE id = '" . $_SESSION['id'] . "'";
 
@@ -66,6 +67,7 @@ echo '<p class="error" >There was a problem accessing your profile ' . $_SESSION
  
     } 
     else { 
+        /* Display error if profile does not load */
       echo '<p class="alert alert-warning">There was a problem accessing your Profile.</p>'; 
     } 
   } 
@@ -89,29 +91,32 @@ echo '<p class="error" >There was a problem accessing your profile ' . $_SESSION
 
 
 
-                <form class="form-signin" enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                <form class="form-signin" enctype="multipart/form-data" method="post" action="">
 
-
+                    <!-- Username form -->
                     <legend>Personal Information</legend>
-                    <label class="sr-only" for="username">User Name:</label>
+                    <label class="sr-only" for="username">Username:</label>
                     <input class="form-control" type="text" id="usernamee" name="username" placeholder="" value="<?php if (!empty($username)) echo $username; else echo 'Username'; ?>"
                     />
                     <br />
+                    <!-- First name form -->
                     <label class="sr-only" for="fname">First Name:</label>
                     <input class="form-control" type="text" id="fnamee" name="fname" placeholder="" value="<?php if (!empty($fname)) echo $fname; else echo 'First Name'; ?>"
                     />
                     <br />
+                    <!-- Email form -->
                     <label class="sr-only" for="email">Email:</label>
                     <input class="form-control" type="text" id="emaile" name="email" placeholder="" value="<?php if (!empty($email)) echo $email; else echo 'email@email.email'; ?>"
                     />
                     <br />
+                    <!-- Date the user registered form -->
                     <label class="sr-only" for="registry_date">Registry Date:</label>
                     <input class="form-control" type="text" id="registry_date" name="registry_date" placeholder="" value="<?php if (!empty($registry_date)) echo $registry_date; else echo 'YYYY-MM-DD'; ?>"
                     />
                     <br />
-
+                    <!-- Submit button form -->
                     <input class="btn btn-lg btn-primary btn-block" type="submit" value="Save Profile" name="edit" />
-                    
+
                 </form>
 
 
